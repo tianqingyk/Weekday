@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<user>
+    <!-- user info page -->
+    <div id="user-manage" class="row m-0" style="display: none">
+        <div class="container-fluid p-0">
+            <!-- user avatar -->
+            <object th:include="main/userInfo/userAvatar::userAvatar" th:remove="tag"></object>
+
+            <!-- user info -->
+            <object th:include="main/userInfo/info::info" th:remove="tag"></object>
+
+            <!-- edit info page -->
+            <object th:include="main/userInfo/editInfo::editInfo" th:remove="tag"></object>
+
+            <!-- upload avatar -->
+            <object th:include="main/userInfo/uploadAvatar::uploadAvatar" th:remove="tag"></object>
+        </div>
+    </div>
+</user>
+</body>
+</html>

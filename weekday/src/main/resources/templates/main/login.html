@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:v-on="http://www.w3.org/1999/xhtml"
+      xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<body>
+  <login>
+    <div class="container">
+
+      <!-- login page -->
+      <div id="login-page" class="row">
+        <div class="col-1 col-md-2 col-xl-3"></div>
+        <div class="col-10 col-md-8 col-xl-6">
+          <div class="text-center mt-3 mb-4">
+            <img class="" src="/static/images/logo.png" alt="" width="172" height="100">
+          </div>
+
+          <div class="card login-card">
+            <div class="card-body">
+              <h1 class="h3 font-weight-normal text-center">Please sign in</h1>
+              <form v-bind:on.prevent>
+                <div class="form-group">
+                  <label for="login-username">Username</label>
+                  <input id="login-username" class="form-control" type="text" placeholder="Username" required autofocus>
+                </div>
+                <div id="login-password" class="form-group">
+                  <label for="password">Password</label>
+                  <div class="input-group">
+                    <input id='password' class="form-control" name="password" type="password" placeholder="Password">
+                    <Password id="login-pwd"></Password>
+                  </div>
+                </div>
+                <button @click="login" id="btn-login" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                <div class="row login-line">
+                  <div class="col-5"></div>
+                  <div class="col-2 text-center">or</div>
+                  <div class="col-5"></div>
+                </div>
+                <div id="my-signin2" class="login-google"></div>
+                <button class="login-git">
+                  <div class="login-border">
+                    <div class="login-left">
+                      <div class="login-img">
+                        <img src="/static/images/github.svg" width="18px" height="18px" alt>
+                      </div>
+                    </div>
+                    <span class="login-right">
+                  <a style="color: white" href="https://github.com/login/oauth/authorize?client_id=988ac063dc209e02252f">
+                    Sign in with GitHub</a>
+                </span>
+                  </div>
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div class="card mt-3 login-card">
+            <div class="main_heading-4 text-center">
+              If you don't have account
+              <a href="/register">Create</a>
+            </div>
+            <div class="main_heading-4 text-center">
+              <a href="/forgetPassword">Forget your password?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </login>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<project>
+    <!-- project -->
+    <div id="project-manage" class="row project-manage">
+        <!-- project info -->
+        <object th:include="main/projectPage/projectInfo::projectInfo" th:remove="tag"></object>
+
+        <!-- add project task -->
+        <object th:include="main/projectPage/addTask::addTask" th:remove="tag"></object>
+
+        <!-- update task-->
+        <object th:include="main/projectPage/updateTask::updateTask" th:remove="tag"></object>
+
+        <!-- task table -->
+        <object th:include="main/projectPage/taskTable::taskTable" th:remove="tag"></object>
+    </div>
+</project>
+</body>
+</html>

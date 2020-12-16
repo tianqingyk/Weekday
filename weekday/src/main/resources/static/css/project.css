@@ -1,0 +1,69 @@
+/*
+ * project
+ */
+.project-manage{
+    margin: 0;
+    display: none;
+}
+.project-top{
+    height: 250px;
+    border-bottom: 1px solid #D3D3D3;
+    background-size: cover;
+    background-image: url("/static/images/timg2.jpg");
+}
+.project-top-update{
+    height: 300px;
+    border-bottom: 1px solid #D3D3D3;
+    background-size: cover;
+    background-image: url("/static/images/timg2.jpg");
+}
+.project-title{
+    margin-left: 30px;
+    font-size: 34px;
+    font-family: 'Roboto Slab', serif;
+}
+.task-title{
+    font-size: 25px;
+    font-family: 'Roboto Slab', serif;
+}
+.project-info{
+    margin: 10px 0 10px 0;
+}
+.project-content{
+    margin-left: 30px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.project-progress{
+    margin-left: 30px;
+}
+
+/*
+ * task
+ */
+.task{
+    margin-top: 10px;
+    height: 100%;
+    display: none;
+}
+.th-font{
+    font-family: 'Roboto Slab', serif
+}
+.card{
+    margin-bottom: 10px;
+}
+.card-body{
+    padding-bottom: 0;
+}
+.comment-row{
+    margin: 0 -20px 0 -20px;
+    border-top: 1px solid rgba(0, 0, 0, .125);
+}
+.comment-border{
+    border-right: 1px solid rgba(0, 0, 0, .125)
+}
+.comment-btn{
+    width: 100%;
+    border-color: white;
+    background-color: unset;
+}

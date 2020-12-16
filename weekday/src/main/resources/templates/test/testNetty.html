@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Netty test</title>
+  <object th:include="fragments/header::header" th:remove="tag"></object>
+
+</head>
+<body>
+<div class="container" style="margin-top: 50px;">
+  <div class="dropdown" >
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      command
+    </button>
+    <div id="command" class="dropdown-menu">
+      <a v-for="show in shows" class='dropdown-item'>
+        {{show}}
+      </a>
+    </div>
+  </div>
+
+  <form style="margin-top: 30px">
+    <div class="form-group">
+      <label for="data-input">test netty data</label>
+      <input id="data-input" type="text" class="form-control" style="width:1000px">
+    </div>
+    <button id="btn-send" class="btn btn-primary">send</button>
+  </form>
+  <div class="mt-4 mb-4" style="height: 2px; width: 100%; border: blue solid 1px"></div>
+  <div class="text-center">
+    <label for="responseText" class="h3">Response Area</label>
+    <textarea id="responseText" style="width: 1024px;height: 750px;"></textarea>
+  </div>
+</div>
+<script type="text/javascript" src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script src="webjars/vue/2.6.12/dist/vue.min.js"></script>
+<script type="module" src="/static/js/net/socketConnect.js"></script>
+<script type="module" src="/static/js/test/test-netty.js"></script>
+</body>
+</html>

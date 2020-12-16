@@ -1,0 +1,29 @@
+#netty
+nettyconf:
+  port: 8081
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: 988ac063dc209e02252f #github-client-id
+            client-secret: 75d9b3d653d745144702bd9dccf259ba87f7fba2 #github-client-secret
+          google:
+            client-id: 550032846021-nfahvmb9ll8id6f6ccfkkf9ij0vmq39h.apps.googleusercontent.com
+            client-secret: FIT_v_0blA5etrdGRQ31Z0DQ
+  mail:
+    host: smtp.gmail.com
+    username: weekday673@gmail.com
+    password: fall2020@673
+    protocol: smtp
+    properties.mail.smtp.auth: true
+    properties.mail.smtp.port: 465
+    properties.mail.display.sendmail: Javen
+    properties.mail.display.sendname: Spring Boot Guide Email
+    properties.mail.smtp.starttls.enable: true
+    properties.mail.smtp.starttls.required: true
+    properties.mail.smtp.ssl.enable: true
+    from: weekday673@gmail.com
+    default-encoding: utf-8

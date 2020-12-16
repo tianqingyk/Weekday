@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<editInfo>
+    <div id="edit-page" class="row mt-4" style="display: none">
+        <div class="col-1 col-md-2 col-xl-3"></div>
+        <div class="col-10 col-md-8 col-xl-6 user-edit">
+
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="h3 font-weight-normal text-center">Edit info</h1>
+                    <form v-bind:on.prevent>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Name</span>
+                            </div>
+                            <input id="edit-name" class="form-control" type="text" placeholder="Name">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Label</span>
+                            </div>
+                            <input id="edit-label" class="form-control" type="text" placeholder="label">
+
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Email</span>
+                            </div>
+                            <input id="edit-email" class="form-control" type="email"
+                                   placeholder="Email address">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Phone</span>
+                            </div>
+                            <input id="edit-phone" class="form-control" type="number"
+                                   placeholder="Phone number">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Birthday</span>
+                            </div>
+                            <input id="edit-birthday" class="form-control" type="date" placeholder="Birthday">
+                        </div>
+
+                        <div id="edit-p" class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Password</span>
+                            </div>
+                            <input id='edit-password' class="form-control" name="password" type="password"
+                                   placeholder="Password">
+                            <password id="edit-pwd"></password>
+                        </div>
+                        <button id="btn-edit-info" class="btn btn-lg btn-primary btn-block" type="submit">Save
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</editInfo>
+</body>
+</html>

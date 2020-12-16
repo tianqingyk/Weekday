@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<chat>
+  <!-- chat -->
+  <div id="chat-page" class="row" style="display: none">
+    <div class="container-fluid">
+      <div id="chat-info-top" class="chat-info-top">
+        <div class="row">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-4 mt-4 text-center user-username">
+            <p class="user-info-content">Chat Room</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div id="chat-left" class="col-lg-3"></div>
+        <div id="chat-center" class="col-lg-6">
+          <div class="mt-4 chat">
+            <div class="chat-profile">
+              <img id="chat-main-user" class="chat-user-img" src="/static/images/head.png" alt>
+              <p id="chat-name" class="chat-name" userid="" teamid=""></p>
+              <div class="social-media">
+                <img src="/static/images/facebook.svg" width="25px" height="25px" alt>
+                <img class="ml-3" src="/static/images/twitter.svg" width="25px" height="25px" alt>
+                <img class="ml-3 mr-2" src="/static/images/instagram.svg" width="25px" height="25px" alt>
+              </div>
+            </div>
+            <div id="chat-message" class="chat-message overflow-auto">
+
+            </div>
+            <div class="message-input">
+              <div class="wrap">
+                <input id="input-message" class="ml-2 mt-1" type="text" placeholder="Write your message...">
+                <button id="btn-chat" disabled>
+                  <img src="/static/images/paper-plane.svg" width="25px" height="25px" alt>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</chat>
+</body>
+</html>

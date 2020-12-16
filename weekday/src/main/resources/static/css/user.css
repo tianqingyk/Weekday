@@ -1,0 +1,81 @@
+/*
+ * show user info
+ */
+.user-info-top{
+    background:#0085ff;
+    border-bottom-style: inset;
+    border-bottom-color: #EEE8AA;
+    border-bottom-width: 2px;
+    position: relative;
+    padding-top: 70px;
+    min-height: 300px;
+    font-weight: lighter;
+    font-family: "Roboto", helvetica, arial, sans-serif;
+}
+.user-avatar{
+    opacity: 1;
+    width: 136px;
+    height: 135px;
+    border-radius: 50%;
+    transition: 0.3s ease;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    object-fit:cover;
+}
+.user-username{
+    color: #ffffff;
+    font-size: 35px;
+    font-family: "Roboto", helvetica, arial, sans-serif;
+    font-weight: lighter;
+}
+.user-overview{
+    margin-top: 20px;
+}
+.user-overview-title{
+    margin-left: 90px;
+}
+.user-info{
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+.user-info-font{
+    font-size: 20px;
+}
+.user-info-div {
+    margin-left: 10px;
+    display: inline;
+}
+.user-info-content{
+    display: inline;
+}
+.user-info-line{
+    margin-top: 30px;
+}
+.btn-user-info-edit{
+    margin-top: 15px;
+}
+/*
+ * fit Macbook 13
+ */
+@media (min-width: 1200px) {
+    .user-edit{
+        height: 500px;
+    }
+}
+/*
+ * fit 15.6
+ */
+@media (min-width: 1440px){
+    .user-edit{
+        height: 590px;
+    }
+}
+/*
+ *  fit 24.5+
+ */
+@media (min-width: 1920px){
+    .user-edit{
+        height: 860px;
+    }
+}

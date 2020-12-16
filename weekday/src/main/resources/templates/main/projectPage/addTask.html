@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<addTask>
+    <div id="add-task" class="container task">
+        <p class="task-title text-center">Add new task</p>
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <form v-bind:on.prevent>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Name</span>
+                        </div>
+                        <input id="task-name" type="text" class="form-control">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Content</span>
+                        </div>
+                        <input id="task-content" type="text" class="form-control">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Owner
+                            </button>
+                            <div id="owner-list" class="dropdown-menu">
+                            </div>
+                        </div>
+                        <input id="task-owner" type="text" class="form-control">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Requester
+                            </button>
+                            <div id="requester-list" class="dropdown-menu">
+                            </div>
+                        </div>
+                        <input id="task-requester" type="text" class="form-control">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Start</span>
+                        </div>
+                        <input id="task-start" type="date" class="form-control">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">End</span>
+                        </div>
+                        <input id="task-end" type="date" class="form-control">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Complexity</span>
+                        </div>
+                        <select class="form-control" id="task-complex">
+                            <option value="1">1 point</option>
+                            <option value="2">2 points</option>
+                            <option value="3">3 points</option>
+                            <option value="4">4 points</option>
+                        </select>
+                    </div>
+                    <button id="btn-add-task" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</addTask>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Weekday</title>
+    <object th:include="fragments/header::header" th:remove="tag"></object>
+    <script type="text/javascript" src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<script>
+    let google = sessionStorage.getItem("google");
+</script>
+<body>
+<object th:include="main/login::login" th:remove="tag"></object>
+
+<div id="main-page" class="container-fluid" style="display: none">
+    <div class="row">
+        <div class="col-lg-1 left-bar">
+            <div>
+                <img src="/static/images/logo.png" alt="" height="70px" width="118px">
+            </div>
+            <hr>
+            <div class="button-group-vertical">
+                <button id="btnWorkspace" v-on:click="check" class="btn btn-secondary left-button">Workspace</button>
+
+                <button id="btnFriend" v-on:click="check" class="btn btn-secondary left-button">Friend</button>
+
+                <button id="btnUser" v-on:click="check" class="btn btn-secondary left-button">User</button>
+            </div>
+        </div>
+
+        <div id="workspace-panel" class="col-lg-2 panel">
+            <div>
+                <p class="text-center panel-title">Team
+                    <a id="btnAddTeam" class="sm-icon">
+                        <Icon cmd="addTeam" title="bookmark-plus" :check="false"></Icon>
+                    </a>
+                </p>
+
+                <div id="add-team-div" class="create-div" style="display: none">
+                    <Add cmd="create-team" title="create"></Add>
+                </div>
+            </div>
+
+            <div id="add-project-div" class="create-div" style="display: none">
+                <Add cmd="create-project" title="create"></Add>
+            </div>
+
+            <div id="team-list">
+            </div>
+        </div>
+
+        <div id="friend-panel" class="col-lg-2 panel">
+            <div>
+                <p class="text-center panel-title">Friend
+                    <a id="btnAddFriend" class="sm-icon">
+                        <Icon cmd="addFriend" title="person-plus" :check="false"></Icon>
+                    </a>
+                    <a id="btnSearchUser" class="sm-icon">
+                        <Icon cmd="searchFriend" title="search" :check="false"></Icon>
+                    </a>
+                </p>
+
+                <div id="add-user-div" class="create-div" style="display: none">
+                    <Add cmd="add-friend" title="add"></Add>
+                </div>
+
+                <div id="search-user-div" class="create-div" style="display: none">
+                    <Add cmd="search-user" title="search"></Add>
+                </div>
+
+                <ul id="search-list">
+                </ul>
+
+                <h6 class="friend-title">My Friend</h6>
+
+                <ul id="friend-list"></ul>
+
+                <div id="friend-apply" style="display: none">
+                    <h6>Friend Apply</h6>
+                    <ul id="friend-apply-list"></ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="main-right" class="col-lg-11 main-page">
+            <object th:include="main/project::project" th:remove="tag"></object>
+
+            <object th:include="main/user::user" th:remove="tag"></object>
+
+            <object th:include="main/chat::chat" th:remove="tag"></object>
+        </div>
+
+        <div id="comment-panel" class="c-panel col-lg-3" style="display: none">
+            <div class="row">
+                <div class="col-lg-2">
+                    <img id="btnCloseComment" src="/static/images/chevron-right.svg" class="md-icon" alt="">
+                </div>
+                <div class="col-lg-10 comment-name">
+                    Task name: &nbsp;
+                    <p id="comment-name" style="display: inline"></p>
+                </div>
+            </div>
+            <p class="text-center comment-title">
+                Comment
+                <a id="btnAddComment" class="sm-icon">
+                    <Icon cmd="addComment" title="chat-left-text" :check="false"></Icon>
+                </a>
+            </p>
+            <div id="add-comment-div" class="create-div" style="display: none">
+                <Add cmd="add-comment" title="add"></Add>
+            </div>
+            <p id="show-comment" taskid=""></p>
+        </div>
+    </div>
+</div>
+<script>
+    if (google === "success") {
+        $('.login-google').attr("id", "success");
+    }
+</script>
+<object th:include="fragments/footer::footer" th:remove="tag"></object>
+
+</body>
+</html>

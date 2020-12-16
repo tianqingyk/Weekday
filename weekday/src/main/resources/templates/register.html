@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Create your account</title>
+  <object th:include="fragments/header::header" th:remove="tag"></object>
+  <script type="text/javascript" src="webjars/vue/2.6.12/dist/vue.min.js"></script>
+</head>
+
+<body>
+<div class="container" style="height: 920px">
+  <div class="row">
+    <div class="col-1 col-md-2 col-xl-3"></div>
+    <div class="col-10 col-md-8 col-xl-6">
+      <div class="text-center mt-3 mb-4">
+        <img class="" src="/static/images/logo.png" alt="" width="150" height="70">
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h2 class="font-weight-normal text-center">Create your account</h2>
+          <form th:action="@{/register}" method="post">
+            <div class="form-group">
+              <label for="username">Username *</label>
+              <input type="text" id="username" name="username" class="form-control" placeholder="User Name" required
+                     autofocus>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="Email" required
+                     autofocus>
+            </div>
+
+            <div class="form-group">
+              <label for="birth">Birthday *</label>
+              <input type="date" id="birth" name="birth" class="form-control" placeholder="Birthday" required
+                     autofocus>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">PhoneNumber *</label>
+              <input type="number" id="phone" name="phone" class="form-control" placeholder="Phone Number"
+                      required autofocus>
+            </div>
+
+            <div class="form-group">
+              <label for="label">Label *</label>
+              <input type="text" id="label" name="label" class="form-control" placeholder="Personal Label"
+                     required autofocus>
+            </div>
+
+            <div id="register-pwd" class="form-group">
+              <label for="password">Password *</label>
+              <password></password>
+            </div>
+
+            <div id="confirmPassword" class="form-group">
+              <label for="confirmPassword">Confirm Password *</label>
+              <confirm></confirm>
+            </div>
+
+            <div>
+              <button class="btn btn-lg btn-primary btn-block" type="submit" id="submit"
+                      onclick="alert('A verification email has been sent to your mailbox, please verify')" disabled>
+                Submit
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="/static/js/page/register.js"></script>
+<div class="weekday-footer">
+  <div class="container text-center">
+    <span class="text-muted">Welcome to <a href="/main">Weekday</a> &copy; 2020</span>
+  </div>
+</div>
+
+</body>
+
+</html>

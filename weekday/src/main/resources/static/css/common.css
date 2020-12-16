@@ -1,0 +1,138 @@
+/*
+ * password hide / show
+ */
+#login-password .hide,
+#edit-p .hide,
+#register-pwd .hide,
+#reset-pwd .hide{
+    background-image: url("/static/images/eye-slash.svg");
+    background-repeat:no-repeat;
+    background-position: center;
+}
+
+#login-password .show,
+#edit-p .show,
+#register-pwd .show,
+#reset-pwd .show{
+    background-image: url("/static/images/eye.svg");
+    background-repeat:no-repeat;
+    background-position: center;
+}
+
+html, body{
+    height: 100%;
+}
+
+.sm-icon{
+    width: 20px;
+    margin: 0 0 2px 5px;
+}
+.md-icon{
+    width: 30px;
+    margin: 15px 0 0 5px;
+}
+.list-icon{
+    margin-left: 10px;
+}
+.comment-icon{
+    margin: 0 10px 5px 0;
+}
+.create-div{
+    margin-bottom: 10px;
+}
+/*
+ * left bar
+ */
+.left-bar{
+    background-color: #696969;
+    padding: 0;
+}
+.left-button{
+    width:100%;
+    height: 60px;
+}
+/*
+ * left panel
+ */
+.panel{
+    background-color:white;
+    border-radius:15px 0 0 0;
+    display: none;
+}
+.panel-title{
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 50px;
+}
+.list-title{
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+.friend-title{
+    margin-top: 10px;
+}
+.friend-button{
+    margin-left: 10px
+}
+/*
+comment panel
+*/
+.c-panel{
+    border-left: 1px solid #D3D3D3;
+}
+.comment-name{
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 15px;
+}
+.comment-title{
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 30px;
+}
+/*
+ * main page
+ */
+@media screen and (min-width: 1560px) {
+    .main-page{
+        min-height: 930px;
+        height: 100%;
+        padding: 0;
+        border-left: 1px solid #D3D3D3;
+    }
+}
+
+@media screen and (max-width: 1560px) {
+    .main-page{
+        min-height: 790px;
+        height: 100%;
+        padding: 0;
+        border-left: 1px solid #D3D3D3;
+    }
+}
+
+/*
+ * font style
+ */
+@font-face {
+    font-family: 'Roboto Slab';
+    src:url('/static/fonts/RobotoSlab-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Source Code Pro';
+    src:url('/static/fonts/SourceCodePro-Regular.ttf') format('truetype');
+}
+
+/*
+ * footer style
+ */
+.weekday-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px; /* Set the fixed height of the footer here */
+    line-height: 40px; /* Vertically center the text there */
+    background-color: #f5f5f5;
+}

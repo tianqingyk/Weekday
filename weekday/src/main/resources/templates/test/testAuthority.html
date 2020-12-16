@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function openWin(url,name,iWidth,iHeight) {
+        //获得窗口的垂直位置
+        var iTop = (window.screen.availHeight - 30 - iHeight) / 2;
+        //获得窗口的水平位置
+        var iLeft = (window.screen.availWidth - 10 - iWidth) / 2;
+        window.open(url, name, 'height=' + iHeight + ',innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',status=no,toolbar=no,menubar=no,location=no,resizable=no,scrollbars=0,titlebar=no');
+    }
+    function qqLogin() {
+        var url = "https://github.com/login/oauth/authorize?client_id=96bb0592e6b3b8f2fb90&redirect_uri=http://codergroup.cn/oauth/github/callback&state=LiuYanzhaoLoveLuoQiNeverGiveUp";
+        openWin(url,"qqLogin",650,500);
+    }
+</script>
+<a  href="javascript:void(0);" onclick="qqLogin()"></a>
+<a href="https://github.com/login/oauth/authorize?client_id=96bb0511e6b3b8f2fb90&redirect_uri=http://codergroup.cn/oauth/github/callback&state=use-login" target="_blank"></a>
+</body>
+</html>

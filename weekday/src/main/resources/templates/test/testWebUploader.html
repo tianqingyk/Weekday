@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <object th:include="fragments/header::header" th:remove="tag"></object>
+
+</head>
+
+<body>
+<div class="container">
+  <div class="upload">
+    <div class="queueList">
+      <div class="placeholder">
+        <div id="filePicker" class="webuploader-container"></div>
+        <button id="ctlBtn" class="btn btn-outline-primary">upload</button>
+      </div>
+    </div>
+    <div id="the-list"></div>
+  </div>
+</div>
+
+<script>
+    $(function() {
+        let list = $("#the-list")
+        let btn = $("#ctlBtn")
+        let thumb_nail_width = 100;
+        let thumb_nail_height = 100;
+
+        let uploader = WebUploader.create({
+            auto: false,
+            swf: '/static/js/Uploader.swf',
+            server: 'testUpload.do',
+            pick: {
+                id: '#filePicker',
+                innerHTML: 'select photo',
+                multiple: true
+            },
+            accept: {
+                title: 'Images',
+                extensions: 'gif,jpg,jpeg,bmp,png',
+                mimeType: 'image/*'
+            },
+            method: 'POST',
+        });
+
+        uploader.on('fileQueued', function(file) {
+            let li = $("<div id='" + file.id + "' class='file-item thumbnail'>" + '<img>' + '<div class="info">'
+                + file.name + '</div>' + '</div>'),
+                img = li.find('img');
+
+            list.append(li);
+
+            uploader.makeThumb(file, function(error, src) {
+                if (error) {
+                    img.replaceWith('<span>can not view</span>');
+                    return
+                }
+
+                img.attr('src', src);
+            }, thumb_nail_width, thumb_nail_height);
+        });
+
+        uploader.on( 'uploadProgress', function( file, percentage ) {
+            let li = $( '#'+file.id ), percent = li.find('.progress span');
+
+            if ( !percent.length ) {
+                percent = $('<p class="progress"><span></span></p>')
+                    .appendTo( li )
+                    .find('span');
+            }
+
+            percent.css( 'width', percentage * 100 + '%' );
+        });
+
+        uploader.on( 'uploadSuccess', function( file ) {
+            $( '#'+file.id ).addClass('upload-state-done');
+        });
+
+        uploader.on( 'uploadError', function( file ) {
+            let li = $( '#'+file.id ), error = li.find('div.error');
+
+            if ( !error.length ) {
+                error = $('<div class="error"></div>').appendTo( li );
+            }
+
+            error.text('upload fail');
+        });
+
+        uploader.on( 'uploadComplete', function( file ) {
+            $( '#'+file.id ).find('.progress').remove();
+        });
+
+        btn.on( 'click', function() {
+            console.log("uploading");
+            uploader.upload();
+            console.log("upload success");
+        });
+    });
+</script>
+</body>
+
+</html>
