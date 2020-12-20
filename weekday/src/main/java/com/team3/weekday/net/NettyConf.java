@@ -13,11 +13,17 @@ import javax.validation.constraints.NotEmpty;
  */
 
 @Component
-@ConfigurationProperties(prefix = "nettyconf")
+@ConfigurationProperties(prefix = "netty")
 public class NettyConf {
 
     @NotEmpty
     private int port;
+
+    @NotEmpty
+    private int mtu;
+
+    @NotEmpty
+    private int maxContentLength;
 
     public int getPort() {
         return port;
@@ -25,5 +31,21 @@ public class NettyConf {
 
     public void setPort(int port) {
         this.port = port;
+    }
+
+    public int getMtu() {
+        return mtu;
+    }
+
+    public void setMtu(int mtu) {
+        this.mtu = mtu;
+    }
+
+    public int getMaxContentLength() {
+        return maxContentLength;
+    }
+
+    public void setMaxContentLength(int maxContentLength) {
+        this.maxContentLength = maxContentLength;
     }
 }
