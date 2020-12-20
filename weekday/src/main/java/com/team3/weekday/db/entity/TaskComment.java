@@ -1,5 +1,7 @@
 package com.team3.weekday.db.entity;
 
+import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +14,7 @@ import java.util.Date;
  * @date 2020/12/8
  */
 @Entity
+@Data
 public class TaskComment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,35 +37,4 @@ public class TaskComment {
         this.date = new Date();
     }
 
-    public Long getTaskId() {
-        return taskId;
-    }
-
-    public void setTaskId(Long taskId) {
-        this.taskId = taskId;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
 }

@@ -2,6 +2,7 @@ package com.team3.weekday.db.entity;
 
 import com.team3.weekday.constant.CommonConstant;
 import com.team3.weekday.utils.StringBuilderUtil;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
  * @date 2020-10-21
  */
 @Entity
+@Data
 public class Project {
 
     @Id
@@ -45,37 +47,6 @@ public class Project {
         this.description = description;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getTeamId() {
-        return teamId;
-    }
-
-    public void setTeamId(Long teamId) {
-        this.teamId = teamId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getTasks() {
-        return tasks;
-    }
-
-    public void setTasks(String tasks) {
-        this.tasks = tasks;
-    }
 
     public List<Long> getTaskList() {
         return StringBuilderUtil.stringToList(this.tasks);
@@ -89,19 +60,4 @@ public class Project {
         this.setTasks(StringBuilderUtil.deleteElement(taskId,this.tasks));
     }
 
-    public String getBackground() {
-        return background;
-    }
-
-    public void setBackground(String background) {
-        this.background = background;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }

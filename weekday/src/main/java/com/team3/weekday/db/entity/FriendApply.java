@@ -1,10 +1,14 @@
 package com.team3.weekday.db.entity;
 
+import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 @Entity
+@Data
 public class FriendApply {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,27 +27,4 @@ public class FriendApply {
 
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getUserId1() {
-        return userId1;
-    }
-
-    public void setUserId1(Long userId1) {
-        this.userId1 = userId1;
-    }
-
-    public Long getUserId2() {
-        return userId2;
-    }
-
-    public void setUserId2(Long userId2) {
-        this.userId2 = userId2;
-    }
 }

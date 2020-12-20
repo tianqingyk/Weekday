@@ -3,6 +3,7 @@ package com.team3.weekday.db.entity;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.team3.weekday.constant.CommonConstant;
 import com.team3.weekday.utils.StringBuilderUtil;
+import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -22,9 +23,10 @@ import java.util.List;
  */
 
 @Entity
+@Data
 public class User implements UserDetails, Serializable {
 
-    @Id // Key
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -62,7 +64,10 @@ public class User implements UserDetails, Serializable {
 
     private String activeCode;
 
-    private Integer activeStatus; // 0:non-active 1:active
+    /**
+     * 0:non-active 1:active
+     */
+    private Integer activeStatus;
 
     @Column(length = 20, unique = true)
     private Long githubId;
@@ -104,113 +109,9 @@ public class User implements UserDetails, Serializable {
 //        this.password = oAuth2Id;
 //    }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Long getPhonenum() {
-        return phonenum;
-    }
-
-    public void setPhonenum(Long phonenum) {
-        this.phonenum = phonenum;
-    }
-
-    public Date getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
-    }
-
-    public String getLabel() {
-        return label;
-    }
-
-    public void setLabel(String label) {
-        this.label = label;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
-
-    public String getTeams() {
-        return teams;
-    }
-
-    public void setTeams(String teams) {
-        this.teams = teams;
-    }
 
     public List<Long> getTeamList() {
         return StringBuilderUtil.stringToList(this.teams);
-    }
-
-
-    public String getActiveCode() {
-        return activeCode;
-    }
-
-    public void setActiveCode(String activeCode) {
-        this.activeCode = activeCode;
-    }
-
-    public Integer getActiveStatus() {
-        return activeStatus;
-    }
-
-    public void setActiveStatus(Integer activeStatus) {
-        this.activeStatus = activeStatus;
-    }
-
-    public Long getGithubId() {
-        return githubId;
-    }
-
-    public void setGithubId(Long githubId) {
-        this.githubId = githubId;
-    }
-
-    public String getGoogleId() {
-        return googleId;
-    }
-
-    public void setGoogleId(String googleId) {
-        this.googleId = googleId;
     }
 
     @Override
