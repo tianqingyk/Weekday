@@ -13,6 +13,7 @@ import java.util.List;
  * @projectName weekday
  * @date 2020-11-03
  */
+// TODO Ke Yang 不用写 set和get
 @Entity
 public class ChatGroup {
 
